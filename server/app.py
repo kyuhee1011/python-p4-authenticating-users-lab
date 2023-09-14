@@ -54,11 +54,11 @@ class Login(Resource):
             User.username==request.get_json()['username']).first()
         
         session ['user_id']=user.id
-        return (user.to_dict()),200
+        return user.to_dict(),200
     
 
 class Logout(Resource):
-    
+
     def delete(self):
 
         session['user_id'] = None
